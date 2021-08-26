@@ -1,0 +1,8 @@
+The method 'spin_me' is defined and takes on parameter str.
+The .split method is invoked on the str object, returns an array 
+of string objects. The method .each is invoked on the returned array
+and each str is passed to the block. The .reverse! method is invoked 
+on each argument passed to the block. As this method is destructive,
+the element in the array will be permantently mutated. Finally, the method .join is invoked with the argument " " passed to it, concatinating the string and returning the object. 
+
+The string object is a new object as str.split returns an array and this is what is passed to the .each method. When .join is invoked it creates an entirely new string based on the values of the array. 

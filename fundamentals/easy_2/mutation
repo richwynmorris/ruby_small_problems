@@ -1,0 +1,25 @@
+Question:
+What will the following code print, and why? Don't run the code until you have tried to answer.
+
+array1 = %w(Moe Larry Curly Shemp Harpo Chico Groucho Zeppo)
+array2 = []
+array1.each { |value| array2 << value }
+array1.each { |value| value.upcase! if value.start_with?('C', 'S') }
+puts array2
+
+---------------------------------------------
+
+Array1 intialized and is assigned an array object with a data set of string objects. 
+
+Array2 is initialized and assigned an array object that contains no elements.
+
+The .each method is invoked on Array1 and passes each element of the array to the block. 
+
+The block assigns each element to the parameter 'value'. The push method is invoked within the block and each 'value' is assigned to the empty array of the local variable array2.   
+
+array1 then invokes the .each method a second time and passes each of its elements to the block. Each element is assigned to the parameter 'value'. Each value is mutated using the .upcase! if it considered true by the coniditional statement 'if'. The if statement returns the value for mutation if it starts with the string object 'C' or 'S'. 
+
+As the values from array1 are mutates, so too are the same values of array2 as the method .upcase! is destructive and both localised variables are pointing to the same object. 
+
+As a result, when the puts method is invoked, the following array will be printed: 
+['Moe','Larry','CURLY','SHEMP','Harpo', 'CHICO', 'Groucho', 'Zeppo'].

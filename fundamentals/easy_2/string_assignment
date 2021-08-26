@@ -1,0 +1,14 @@
+```
+name = 'Bob'
+save_name = name
+name.upcase!
+puts name, save_name
+```
+
+The local variable 'name' is initialized and assigned to the string object 'Bob'.
+
+The local variable 'save_name' is intialized and assigned to the local variable 'name' which points to the same string object 'Bob'.
+
+The .upcase! method is invoked and called by the local variable 'name'. As the method is permanately destrcutive it mutates the string object and captializes it. 'Bob' is now 'BOB'.
+
+The puts method is then involved and the local variables 'name' and 'save_name' are called. As both local variables are assigned indirectly to the same object, the puts method prints: "BOB" "BOB". The puts method then returns nil.
